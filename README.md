@@ -15,7 +15,7 @@ Open the Vite URL on a phone or set the browser viewport to 390 × 844. App data
 
 ## Demo flows
 
-- Choose BEN-1001 Sunita Patil, tap **Normal visit · Simulated**, and review the five fields. Use **Correct field** and `No, weight is 56 kilo`, then confirm. The app records the correction and creates the 20 November follow-up.
+- Choose BEN-1001 Sunita Patil, tap **Normal visit · Simulated**, and review the five fields. Use **Correct field** and `No, weight is 56 kilo`, or choose **Speak correction (Browser speech)**, then confirm. The app records the correction and creates the 20 November follow-up.
 - Choose **Emergency · Simulated**. A deterministic rule shows a referral alert before read-back. **Show nearest PHC** opens the map with the sample facility highlighted; return to the draft and confirm to save the danger flag.
 - BEN-1002 is the newborn case. Choose **Newborn concern · Simulated** for NB-01 and NB-03. “No bleeding” stays quiet; “Maybe bleeding” is flagged for review.
 
@@ -33,4 +33,4 @@ Login, roles, registration, supervisor or national dashboards, learning centre, 
 
 ## Browser acceptance suite
 
-`npm run e2e` runs the five 390 × 844 Playwright acceptance scenarios in `tests/e2e/acceptance.spec.ts`. Install the browser with `npx playwright install chromium` first. The current environment does not have the Playwright-matched Chromium headless shell installed, so this run stops before assertions. Install Chromium with the command above in an environment that can download browser binaries. Domain tests and key UI flows were separately exercised in the running app. See `CHECKLIST.md` for that limitation.
+`npm run e2e` runs the five 390 × 844 Playwright acceptance scenarios in `tests/e2e/acceptance.spec.ts`. Install the browser with `npx playwright install chromium` first. The Playwright-matched Chromium binary is installed, but macOS denies Chromium’s `bootstrap_check_in` call in this sandbox, so execution stops before assertions. Run in an environment where browser launch is allowed. Domain tests and key UI flows were separately exercised in the running app. See `CHECKLIST.md` for that limitation.

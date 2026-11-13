@@ -14,6 +14,7 @@ test('normal visit: five fields, spoken read-back panel, one-field correction, s
  await expect(page.getByText('20 November',{exact:true}).first()).toBeVisible();
  await expect(page.getByRole('button',{name:/Confirm & save/})).toBeVisible();
  await page.getByRole('button',{name:/Correct field/}).click();
+ await expect(page.getByRole('button',{name:/Speak correction/})).toBeVisible();
  await page.getByRole('button',{name:'No, weight is 56 kilo'}).click();
  await expect(page.getByText('56 kg',{exact:true}).first()).toBeVisible();
  await expect(page.getByText(/55 kg.*56 kg/)).toBeVisible();
