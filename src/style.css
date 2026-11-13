@@ -14,6 +14,7 @@
 .back-draft-map{border:0;border-radius:12px;padding:8px 10px;background:#0e9f8e;color:#fff;font-size:10px;font-weight:700}
 
 .map-top-note{margin:6px 0 9px;padding:8px 10px;background:#edf5f1;border-radius:12px;color:#566d66;font-size:9px;line-height:1.5;font-weight:600}
+@media(max-width:600px){html,body,#root{height:100%;overflow:hidden}.app{height:100dvh;min-height:0;overflow:hidden}.phone{height:100%;min-height:0}.page{min-height:0;overscroll-behavior-y:contain}.bottom{position:fixed;inset:auto 0 0;width:100%;}}
 .voice-correction{display:block;width:100%;min-height:44px;margin:8px 0;border:1px solid #b9dfd5;border-radius:13px;background:#e4f4f1;color:#087968;font-size:12px;font-weight:700}
 .dark .voice-correction{background:#11332f;color:#9fe3d2;border-color:#356b62}
 
