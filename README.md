@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open the Vite URL on a phone or set the browser viewport to 390 × 844. App data is stored in localStorage. `npm run build` makes `dist/`; `npm run test` runs Vitest domain tests.
+Open the Vite URL on a phone or set the browser viewport to 390 × 844. At laptop widths (1000 px and above), the app switches to a full-window workspace with a left navigation rail, a two-column dashboard, and larger content areas. The existing phone layout remains active below that breakpoint. App data is stored in localStorage. `npm run build` makes `dist/`; `npm run test` runs Vitest domain tests.
 
 ## Demo flows
 

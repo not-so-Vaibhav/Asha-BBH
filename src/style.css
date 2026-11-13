@@ -16,3 +16,120 @@
 .map-top-note{margin:6px 0 9px;padding:8px 10px;background:#edf5f1;border-radius:12px;color:#566d66;font-size:9px;line-height:1.5;font-weight:600}
 .voice-correction{display:block;width:100%;min-height:44px;margin:8px 0;border:1px solid #b9dfd5;border-radius:13px;background:#e4f4f1;color:#087968;font-size:12px;font-weight:700}
 .dark .voice-correction{background:#11332f;color:#9fe3d2;border-color:#356b62}
+
+/* Laptop workspace; the existing 390 px phone layout stays untouched below this breakpoint. */
+@media (min-width: 1000px) {
+  .app {
+    display: block;
+    min-height: 100vh;
+    padding: 0;
+    background: #eef3f1;
+  }
+
+  .phone {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    grid-template-columns: 238px minmax(0, 1fr);
+    grid-template-rows: 76px minmax(0, 1fr);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .top {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    height: 76px;
+    padding: 0 clamp(24px, 3vw, 48px);
+    background: #faf6ee;
+  }
+
+  .brand { font-size: 18px; gap: 12px; }
+  .mark { width: 40px; height: 40px; border-radius: 13px; }
+  .demo { font-size: 12px; padding: 8px 12px; }
+  .topright { gap: 12px; }
+  .top-language select { min-height: 42px; padding: 0 14px; border: 1px solid #d8dfda; border-radius: 12px; background: #fffdf8; color: #0b1f33; }
+  .top .icon { padding: 10px; }
+
+  .page {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    max-width: 1600px;
+    justify-self: center;
+    padding: 36px clamp(30px, 4vw, 68px) 56px;
+  }
+
+  .bottom {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 24px 14px;
+    border-top: 0;
+    border-right: 1px solid #e9e6df;
+    background: #fffdf8;
+  }
+
+  .bottom button {
+    width: 100%;
+    min-height: 54px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 0 18px;
+    border-radius: 13px;
+  }
+
+  .bottom button svg { width: 21px; height: 21px; }
+  .bottom small { font-size: 14px; }
+  .bottom .on { background: #e4f4f1; }
+  .bottom .on:before {
+    top: 15px;
+    left: 0;
+    width: 3px;
+    height: 24px;
+  }
+
+  .desktop-note { display: none; }
+
+  .page:has(.progress-card) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+    grid-auto-flow: row;
+    align-content: start;
+    gap: 0 28px;
+  }
+
+  .page:has(.progress-card) > .eyebrow,
+  .page:has(.progress-card) > h1,
+  .page:has(.progress-card) > .sub {
+    grid-column: 1 / -1;
+  }
+
+  .page:has(.progress-card) > .progress-card { grid-column: 1; grid-row: 4; min-height: 132px; }
+  .page:has(.progress-card) > .stats { grid-column: 1; grid-row: 5; }
+  .page:has(.progress-card) > .section-title:has(+ .next-card) { grid-column: 2; grid-row: 4; align-self: end; }
+  .page:has(.progress-card) > .next-card { grid-column: 2; grid-row: 5; }
+  .page:has(.progress-card) > .section-title:has(+ .beneficiaries) { grid-column: 1 / -1; grid-row: 6; }
+  .page:has(.progress-card) > .beneficiaries { grid-column: 1 / -1; grid-row: 7; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+  .page:has(.progress-card) h1 { font-size: 34px; }
+  .page:has(.progress-card) .sub { font-size: 16px; }
+  .page:has(.progress-card) .section-title { margin-top: 26px; }
+  .page:has(.progress-card) .beneficiary-row { position: relative; min-width: 0; padding-bottom: 18px; }
+  .page:has(.progress-card) .history-link { position: absolute; right: 12px; bottom: 0; }
+
+  .page:has(.visit-head) { max-width: 1320px; }
+  .page:has(.visit-head) .visit-head,
+  .page:has(.visit-head) .steps { max-width: 860px; }
+  .page:has(.map-wrap) { max-width: 1500px; }
+}
