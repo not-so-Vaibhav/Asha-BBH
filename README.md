@@ -27,7 +27,7 @@ All simulated transcripts and browser speech are identified as simulated/browser
 
 ## Speech providers
 
-The default provider remains **Simulated**, as required for the demo. Gnani Prisma and Timbre are available through a server-side proxy when the key is configured. Neither browser speech nor simulated speech is presented as Gnani. `CHECKLIST.md` records the implementation and remaining device-level verification.
+**Gnani Prisma v3.0** is selected by default and the selection is saved on this device. **Simulated** and **Browser speech** remain available as explicit alternatives. Gnani Prisma and Timbre use the server-side proxy when the key is configured. Neither browser speech nor simulated speech is presented as Gnani. `CHECKLIST.md` records the implementation and remaining device-level verification.
 
 ## Map and scope
 
