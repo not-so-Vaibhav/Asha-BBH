@@ -133,3 +133,5 @@
   .page:has(.visit-head) .steps { max-width: 860px; }
   .page:has(.map-wrap) { max-width: 1500px; }
 }
+.speech-provider{margin-left:auto;color:#63736f;font-size:10px;font-weight:500;letter-spacing:0}
+.dark .speech-provider{color:#b4c5c7}

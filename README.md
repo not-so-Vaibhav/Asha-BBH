@@ -11,6 +11,10 @@ npm install
 npm run dev
 ```
 
+Gnani speech requires a server-only API key. Put `GNANI_API_KEY_ID` in the ignored `.env.local` file (copy `.env.example` as a starting point); never use a `VITE_` variable or commit the key. `npm run dev` starts the local API proxy and Vite. The proxy keeps the key out of browser code and sends speech requests to Gnani. In Settings, choose **Gnani Prisma v3.0** for microphone transcription; browser microphone permission is required. Timbre v3.0 with the Shivani voice is the read-back default. `GNANI_TTS_MODEL` and `GNANI_TTS_VOICE` can be set in `.env.local` if your account uses another supported combination. If Timbre audio cannot be reached or played, the app falls back to browser speech and labels it accordingly. `GET /api/gnani/status` reports configuration without exposing the key.
+
+Prisma uses the official streaming WebSocket protocol and Timbre uses the official inference API. See [Prisma streaming](https://docs.gnani.ai/api/STT/stt-websocket) and [Timbre inference](https://docs.gnani.ai/api/TTS/tts-inference). The integration has been smoke-tested against Gnani with generated synthetic speech. Browser microphone capture and actual device playback should still be checked on the target laptop/phone.
+
 Open the Vite URL on a phone or set the browser viewport to 390 × 844. At laptop widths (1000 px and above), the app switches to a full-window workspace with a left navigation rail, a two-column dashboard, and larger content areas. The existing phone layout remains active below that breakpoint. App data is stored in localStorage. `npm run build` makes `dist/`; `npm run test` runs Vitest domain tests.
 
 ## Demo flows
@@ -21,9 +25,9 @@ Open the Vite URL on a phone or set the browser viewport to 390 × 844. At lapto
 
 All simulated transcripts and browser speech are identified as simulated/browser behavior; neither is Gnani. The browser Speech Synthesis API is used for prototype read-back when available. Browser speech recognition is optional and browser dependent.
 
-## Gnani integration required
+## Speech providers
 
-The final build requires Gnani Prisma STT and Timbre TTS. No endpoints or credentials were supplied, so both integrations remain unconfigured and explicitly contain `TODO(GNANI)`. Provide official endpoint URLs, credentials/auth method, streaming protocol, supported language/voice identifiers, and error/reconnect behavior before integration. The default provider remains **Simulated**.
+The default provider remains **Simulated**, as required for the demo. Gnani Prisma and Timbre are available through a server-side proxy when the key is configured. Neither browser speech nor simulated speech is presented as Gnani. `CHECKLIST.md` records the implementation and remaining device-level verification.
 
 ## Map and scope
 
@@ -33,4 +37,4 @@ Login, roles, registration, supervisor or national dashboards, learning centre, 
 
 ## Browser acceptance suite
 
-`npm run e2e` runs the five 390 × 844 Playwright acceptance scenarios in `tests/e2e/acceptance.spec.ts`. Install the browser with `npx playwright install chromium` first. The Playwright-matched Chromium binary is installed, but macOS denies Chromium’s `bootstrap_check_in` call in this sandbox, so execution stops before assertions. Run in an environment where browser launch is allowed. Domain tests and key UI flows were separately exercised in the running app. See `CHECKLIST.md` for that limitation.
+`npm run e2e` runs the five 390 × 844 Playwright acceptance scenarios in `tests/e2e/acceptance.spec.ts`. Install the browser with `npx playwright install chromium` first. In this environment macOS denies Chromium’s `bootstrap_check_in` call, so execution stops before UI assertions. Domain tests pass; Prisma streaming and Timbre audio were smoke-tested through the running local proxy using generated synthetic speech. See `CHECKLIST.md` for current evidence and limits.
