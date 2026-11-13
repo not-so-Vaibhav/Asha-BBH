@@ -2,6 +2,29 @@
 
 Mobile first, voice first synthetic visit register for the Gnani Voice Hackathon PS1. The app opens on Home without login. It uses synthetic records and shows the **Synthetic demo data** marker. See [CHECKLIST.md](CHECKLIST.md) for verified status and evidence.
 
+## Architecture
+
+```mermaid
+flowchart LR
+  Worker[ASHA worker] --> Browser[React + Vite app<br/>phone or laptop]
+  Browser -->|spoken transcript| Rules[Deterministic danger rules<br/>and visit-field extraction]
+  Rules --> Browser
+  Browser <-->|synthetic visits and follow-ups| Local[(localStorage)]
+
+  Browser -->|PCM16 mono 16 kHz<br/>WebSocket| STTProxy[/api/gnani/stt/]
+  STTProxy -->|API key header held server-side| Prisma[Gnani Prisma v3.0 STT]
+  Prisma -->|transcript events| STTProxy --> Browser
+
+  Browser -->|read-back or alert text<br/>HTTP POST| TTSProxy[/api/gnani/tts/]
+  TTSProxy -->|API key header held server-side| Timbre[Gnani Timbre v3.0 TTS]
+  Timbre -->|WAV audio| TTSProxy --> Browser
+
+  Runtime[Local Node proxy in development<br/>Vercel Functions when deployed] --> STTProxy
+  Runtime --> TTSProxy
+```
+
+Visit records, beneficiary data, referrals, and follow-ups in this prototype are synthetic and stored in browser localStorage. Captured microphone audio and TTS request text pass through same-origin server endpoints; the API key is never sent to the browser.
+
 ## Run locally
 
 Requirements: Node.js 20+ and npm.
@@ -28,6 +51,17 @@ All simulated transcripts and browser speech are identified as simulated/browser
 ## Speech providers
 
 **Gnani Prisma v3.0** is selected by default and the selection is saved on this device. **Simulated** and **Browser speech** remain available as explicit alternatives. Gnani Prisma and Timbre use the server-side proxy when the key is configured. Neither browser speech nor simulated speech is presented as Gnani. `CHECKLIST.md` records the implementation and remaining device-level verification.
+
+## Gnani API platform services used
+
+The app uses two Gnani APIs. `GNANI_API_KEY_ID` is read only by the local Node proxy or Vercel Functions and is sent to Gnani in server-to-server headers. It must not be exposed through a `VITE_` variable or committed.
+
+| Gnani service | Use in ASHA SAKHI | Endpoint and protocol | Request details |
+|---|---|---|---|
+| **Prisma v3.0 Speech-to-Text** | Live visit voice capture and streaming transcript | [`wss://api.vachana.ai/stt/v3/stream`](https://docs.gnani.ai/api/STT/stt-websocket) · WebSocket | Auth header `x-api-key-id`; model `prisma-v3.0`; `language_code=indic-auto`; `format=codemix`; `x-sample-rate=16000`. The browser captures mono PCM16 audio and streams frames through `/api/gnani/stt`. |
+| **Timbre v3.0 Text-to-Speech** | Spoken read-back and localized danger alert | [`POST https://api.vachana.ai/api/v1/tts/inference`](https://docs.gnani.ai/api/TTS/tts-inference) · HTTPS REST | Auth header `X-API-Key-ID`; default voice `Shivani`; UI languages map to `en-IN`, `hi-IN`, and `mr-IN`. Requests ask for mono 48 kHz, 16-bit linear PCM in a WAV container; returned audio is played by the app. |
+
+The current app configuration uses Prisma's automatic Indic-language detection and Timbre's synchronous WAV response. The optional Timbre model and voice are set with server-only `GNANI_TTS_MODEL` and `GNANI_TTS_VOICE` variables. The [Prisma supported-language list](https://docs.gnani.ai/api/STT/languages) describes the available STT language codes.
 
 ## Deploy to Vercel
 
