@@ -1,0 +1,2 @@
+import{describe,it,expect}from'vitest';import{beneficiaries}from'../data/seed';import{villages,facility,demoDistricts}from'../data/geo';
+describe('sample geography',()=>{it('labels synthetic districts and includes households for seeded families',()=>{expect(demoDistricts).toHaveLength(3);expect(villages.flatMap(v=>v.households).map(h=>h.beneficiaryId)).toEqual(expect.arrayContaining(beneficiaries.map(b=>b.id)))});it('marks facility as sample',()=>expect(facility.label).toBe('Sample facility'))});

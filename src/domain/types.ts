@@ -1,0 +1,10 @@
+export type Language = 'en' | 'hi' | 'mr';
+export type BeneficiaryKind = 'Pregnant' | 'Newborn' | 'Child';
+export type Beneficiary = { id:string; name:string; kind:BeneficiaryKind; age:string; due:string; villageId:string };
+export type VisitType = 'ANC' | 'PNC' | 'HBNC' | 'HBYC' | 'Immunisation' | 'General';
+export type VisitFields = { beneficiaryId:string; visitType:VisitType; weight:string; vaccinationsDue:string; nextVisitDate:string };
+export type Correction = { field:keyof VisitFields; oldValue:string; newValue:string; timestamp:string };
+export type VisitRecord = { id:string; beneficiaryId:string; beneficiaryName:string; fields:VisitFields; timestamp:string; transcript:string; dangerSign:boolean; needsReview:boolean; referralId?:string; corrections:Correction[] };
+export type Referral = { id:string; ruleId:string; category:string; timestamp:string; facility:string; status:'Pending review'; transcriptExcerpt:string; needsReview:boolean; visitId?:string; beneficiaryId:string };
+export type FollowUp = { id:string; beneficiaryId:string; beneficiaryName:string; date:string; status:'Upcoming'|'Pending'|'Overdue'|'Done'; visitId:string };
+export type Rule = { id:string; category:string; appliesTo:BeneficiaryKind[]; patterns:Record<Language|'mix',string[]>; source:string; version:string; wording:Record<Language,string> };
