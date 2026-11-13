@@ -29,6 +29,10 @@ All simulated transcripts and browser speech are identified as simulated/browser
 
 **Gnani Prisma v3.0** is selected by default and the selection is saved on this device. **Simulated** and **Browser speech** remain available as explicit alternatives. Gnani Prisma and Timbre use the server-side proxy when the key is configured. Neither browser speech nor simulated speech is presented as Gnani. `CHECKLIST.md` records the implementation and remaining device-level verification.
 
+## Deploy to Vercel
+
+The repo is prepared for Vercel: `vercel.json` builds the Vite app to `dist/`, and `api/gnani/` contains server-side status, Timbre, and Prisma streaming functions. The browser only calls same-origin `/api/gnani/*` routes; the Gnani key stays in server environment variables, and the paid speech endpoints reject cross-origin requests. On Vercel, import this GitHub repository and add `GNANI_API_KEY_ID` under Project Settings → Environment Variables for Preview and Production. Do not prefix it with `VITE_` or place it in Git. Optionally set `GNANI_TTS_MODEL` and `GNANI_TTS_VOICE`; defaults are `timbre-v3.0` and `Shivani`. Redeploy after setting variables. The Prisma WebSocket function is configured for up to five minutes; Vercel WebSocket support is currently public beta and closes a connection at the function duration limit, so keep visits short and reconnect if a session expires. Before sharing a public demo, enable suitable Vercel Firewall rate limits for `/api/gnani/tts` and `/api/gnani/stt` to reduce third-party API abuse. The local `.env.local` is excluded from Git and Vercel uploads.
+
 ## Map and scope
 
 Map geometry, household pins, and facility data are synthetic and labelled **Sample geography, not real boundaries**. OpenStreetMap tiles provide visual context; a drawn SVG schematic appears if tiles fail. No worker location is tracked. The prototype makes no claims of government integration, offline speech, or measured accuracy. No diagnosis, medicine, or dosage guidance is provided.
