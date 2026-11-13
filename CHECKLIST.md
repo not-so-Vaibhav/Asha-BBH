@@ -26,25 +26,25 @@ Audit date: 2026-11-13. Status reflects the running Vite app plus source/unit-te
 | Item | Status | Evidence and notes |
 |---|---|---|
 | P1-1 Beneficiary list/search; pregnant, newborn, child seeds; BEN-1001 Sunita | DONE | `src/data/seed.ts`, `BeneficiaryList` and search in `src/screens/App.tsx`; runtime showed seeded beneficiaries and Sunita demo case. |
-| P1-2 Visit history on each beneficiary | DONE | History screen and `VisitCard` in `src/screens/App.tsx`; persisted visits are filtered per beneficiary. |
-| P1-3 ANC, PNC, HBNC, HBYC, Immunisation, General selectable | DONE | `visitTypes` and field selector in `src/screens/App.tsx`; all six options are implemented. |
-| P1-4 Follow-ups with Upcoming, Pending, Overdue tabs | DONE | Follow-ups filter/tabs in `src/screens/App.tsx`; visit save creates persisted task in store. |
+| P1-2 Visit history on each beneficiary | PARTIAL | History screen and `VisitCard` in `src/screens/App.tsx`; persisted visits are filtered per beneficiary. History expansion was not separately exercised in the running UI. |
+| P1-3 ANC, PNC, HBNC, HBYC, Immunisation, General selectable | PARTIAL | `visitTypes` and field selector in `src/screens/App.tsx`; all six options are implemented; individual selection was not exercised in the running UI. |
+| P1-4 Follow-ups with Upcoming, Pending, Overdue tabs | PARTIAL | Follow-ups filter/tabs in `src/screens/App.tsx`; visit save creates persisted task in store; each tab filter was not separately exercised in the running UI. |
 | P1-5 Dashboard today's visits, follow-ups, overdue, referrals; live updates | DONE | Dashboard counts/progress ring in `src/screens/App.tsx`; runtime visit save changed visit/follow-up totals. |
-| P1-6 Referrals list with triggering transcript excerpt | DONE | `ReferralCard` in `src/screens/App.tsx`; runtime referral was visible in the list with transcript excerpt. |
+| P1-6 Referrals list with triggering transcript excerpt | PARTIAL | `ReferralCard` in `src/screens/App.tsx`; referral list renders transcript excerpts; list screen was not separately exercised in the running UI. |
 
 ## M: Map
 
 | Item | Status | Evidence and notes |
 |---|---|---|
 | M-1 Map tab and phone-sized map screen | DONE | Bottom navigation and Map screen in `src/screens/App.tsx`, `src/components/MapView.tsx`; runtime opened map. |
-| M-2 District, Block, Village hierarchy chips; multiple sample areas | DONE | `src/data/geo.ts`, map hierarchy in `src/screens/App.tsx`; three sample districts/blocks/villages represented. |
+| M-2 District, Block, Village hierarchy chips; multiple sample areas | PARTIAL | `src/data/geo.ts`, map hierarchy in `src/screens/App.tsx`; multiple samples are rendered, but changing districts/villages was not separately exercised in the running UI. |
 | M-3 Assigned area outlined; other areas faded | DONE | District-dependent polygon style in `src/components/MapView.tsx`. |
 | M-4 Village heatmap and legend | DONE | Coverage polygons and legend in `src/components/MapView.tsx`; runtime map reflected saved visit coverage. |
 | M-5 Lowest coverage highlighted Low coverage | DONE | `VillageCoverage` in `src/components/MapView.tsx`. |
 | M-6 Synthetic household pins; tap shows beneficiary and status | PARTIAL | Synthetic markers and pin detail/click handlers in `src/components/MapView.tsx`; implemented, but pin interaction was not separately verified at runtime. |
 | M-7 Sample PHC marker, distance, Sample facility label | DONE | `facility` in `src/data/geo.ts`; permanent tooltip and alert card in `src/components/MapView.tsx` and `src/screens/App.tsx`; runtime showed label and 1.8 km. |
 | M-8 Saving raises coverage; emergency adds red pin | DONE | Coverage and referral marker derive from persisted visits/referrals in `src/components/MapView.tsx`; runtime showed 50% coverage after save and emergency marker after referral. |
-| M-9 Village aggregated completed/pending card | DONE | `VillageCoverage` in `src/components/MapView.tsx`; rendered on map. |
+| M-9 Village aggregated completed/pending card | PARTIAL | `VillageCoverage` in `src/components/MapView.tsx`; component renders village summaries, but the individual card values were not separately verified at runtime. |
 | M-10 Aggregated view · no continuous tracking privacy chip | DONE | Map UI in `src/screens/App.tsx`; visible at runtime. |
 | M-11 Show nearest PHC opens map highlighted | DONE | Alert action and facility highlight in `src/screens/App.tsx`; runtime opened map with PHC highlighted. |
 | M-12 Sample geography, not real boundaries label | DONE | Map note and disclaimer in `src/screens/App.tsx`; runtime visible. `src/data/geo.ts` contains sample geometry; OSM tile names provide real-world visual context, while app geometry/data remain synthetic. |
