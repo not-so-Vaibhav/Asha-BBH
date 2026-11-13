@@ -135,3 +135,4 @@
 }
 .speech-provider{margin-left:auto;color:#63736f;font-size:10px;font-weight:500;letter-spacing:0}
 .dark .speech-provider{color:#b4c5c7}
+.field.needs-review{border:1px dashed #d99b36;background:#fff9ed}.field.needs-review b{color:#7c5a22}.field.needs-review em,.field.needs-review svg{color:#a96b08}

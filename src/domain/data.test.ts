@@ -3,6 +3,12 @@ const today='2026-11-13';const base:VisitFields={beneficiaryId:'BEN-1001',visitT
 describe('visit extraction and dates',()=>{
  it('extracts all five structured fields from the demo sentence',()=>expect(extract('Aaj mi Sunita cha ANC follow-up visit ghetla. Weight 55 kilo aahe. Pudhil visit 20 November la theva.','BEN-1001',today)).toEqual({beneficiaryId:'BEN-1001',visitType:'ANC',weight:'55 kg',vaccinationsDue:'None reported',nextVisitDate:'2026-11-20'}));
  it('converts Devanagari numerals and vaccination names',()=>expect(extract('वजन ५६ किलो, vaccinations due OPV','BEN-1002',today)).toMatchObject({weight:'56 kg',vaccinationsDue:'OPV'}));
+ it('extracts spoken English weights and Indian numeric dates from the recognized transcript',()=>expect(extract('weight is twenty five kgl And next visit date will be 14th 11 2026.','BEN-1001',today)).toMatchObject({weight:'25 kg',nextVisitDate:'2026-11-14'}));
+ it('extracts spoken Hindi and Marathi weight numbers',()=>{
+  expect(extract('वजन पच्चीस किलो','BEN-1001',today).weight).toBe('25 kg');
+  expect(extract('वजन पंचवीस किलो','BEN-1001',today).weight).toBe('25 kg');
+ });
+ it('does not accept impossible spoken dates',()=>expect(parseVisitDate('31/02/2026',today)).toBe(''));
  it('parses Hindi relative dates',()=>expect(parseVisitDate('कल',today)).toBe('2026-11-14'));
  it('parses Marathi relative dates',()=>expect(parseVisitDate('परवा',today)).toBe('2026-11-15'));
  it('parses next Monday against injected today',()=>expect(parseVisitDate('next Monday',today)).toBe('2026-11-16'));
