@@ -13,7 +13,6 @@ function getJwtSecret() {
 export function isAuthEnforced() {
   if (process.env.REQUIRE_AUTH === 'false') return false;
   if (process.env.REQUIRE_AUTH === 'true') return true;
-  if (process.env.NODE_ENV === 'production' || process.env.VERCEL === '1') return true;
   return Boolean(getSupabaseUrl() || getJwtSecret());
 }
 

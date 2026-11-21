@@ -836,35 +836,35 @@ export default function App() {
           </div>
         </header>
 
-        {isDemoSession && (
-          <div className="demo-session-banner" role="status">
-            <span><strong>Demo session</strong> · Synthetic workspace</span>
-            <RouterLink to="/signup" className="demo-upgrade-link">Create an account to keep your data</RouterLink>
-          </div>
-        )}
-
-        {syncNotice && (
-          <div className="offline-banner" role="status" aria-live="polite">
-            <small>{syncNotice}</small>
-          </div>
-        )}
-
-        {(!isOnline || pendingDraftCount > 0) && (
-          <div className="offline-banner" role="status" aria-live="polite" data-testid="offline-banner">
-            <WifiOff size={15} aria-hidden="true" />
-            <div>
-              <strong>{!isOnline ? x.offlineBannerTitle : `${x.offlineQueueTitle} (${pendingDraftCount})`}</strong>
-              <small>{!isOnline ? x.offlineBannerBody : x.offlineBannerShort}</small>
-            </div>
-            {isOnline && pendingDraftCount > 0 && (
-              <button type="button" className="banner-sync" disabled={syncBusy} onClick={() => void syncOfflineQueue()}>
-                <RefreshCw size={13} aria-hidden="true" />{x.syncNow}
-              </button>
-            )}
-          </div>
-        )}
-
         <section key={screen} className="page page-enter">
+          {isDemoSession && (
+            <div className="demo-session-banner" role="status">
+              <span><strong>Demo session</strong> · Synthetic workspace</span>
+              <RouterLink to="/signup" className="demo-upgrade-link">Create an account to keep your data</RouterLink>
+            </div>
+          )}
+
+          {syncNotice && (
+            <div className="offline-banner" role="status" aria-live="polite">
+              <small>{syncNotice}</small>
+            </div>
+          )}
+
+          {(!isOnline || pendingDraftCount > 0) && (
+            <div className="offline-banner" role="status" aria-live="polite" data-testid="offline-banner">
+              <WifiOff size={15} aria-hidden="true" />
+              <div>
+                <strong>{!isOnline ? x.offlineBannerTitle : `${x.offlineQueueTitle} (${pendingDraftCount})`}</strong>
+                <small>{!isOnline ? x.offlineBannerBody : x.offlineBannerShort}</small>
+              </div>
+              {isOnline && pendingDraftCount > 0 && (
+                <button type="button" className="banner-sync" disabled={syncBusy} onClick={() => void syncOfflineQueue()}>
+                  <RefreshCw size={13} aria-hidden="true" />{x.syncNow}
+                </button>
+              )}
+            </div>
+          )}
+
           <Suspense fallback={<div className="loading-state" role="status">{x.loadingScreen}</div>}>
             {screen === 'Home' && (
               <>

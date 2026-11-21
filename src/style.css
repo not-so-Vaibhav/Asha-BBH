@@ -47,7 +47,7 @@
 
   .brand { font-size: 18px; gap: 12px; }
   .mark { width: 40px; height: 40px; border-radius: 13px; }
-  .demo { font-size: 12px; padding: 8px 12px; }
+  .demo { font-size: 12px; padding: 8px 12px; max-width: none; }
   .topright { gap: 12px; }
   .top-language select { min-height: 42px; padding: 0 14px; border: 1px solid #d8dfda; border-radius: 12px; background: #fffdf8; color: #0b1f33; }
   .top .icon { padding: 10px; }
@@ -109,6 +109,8 @@
     gap: 0 28px;
   }
 
+  .page:has(.progress-card) > .demo-session-banner,
+  .page:has(.progress-card) > .offline-banner,
   .page:has(.progress-card) > .eyebrow,
   .page:has(.progress-card) > h1,
   .page:has(.progress-card) > .sub {
@@ -172,7 +174,7 @@
 .text-large{font-size:112%}.text-large .page{font-size:1.12em}.text-large .field b,.text-large .person-info b,.text-large .transcript p{font-size:15px}
 .text-xlarge{font-size:124%}.text-xlarge .page{font-size:1.22em}.text-xlarge .field b,.text-xlarge .person-info b,.text-xlarge .transcript p{font-size:17px}
 @media(max-width:340px){.p2-actions{grid-template-columns:1fr}}
-.demo-session-banner{margin:0 16px 10px;padding:10px 14px;border-radius:14px;background:rgba(245,166,35,.16);border:1px solid rgba(245,166,35,.45);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--ink)}
+.demo-session-banner{margin:0 0 14px;padding:10px 14px;border-radius:14px;background:rgba(245,166,35,.16);border:1px solid rgba(245,166,35,.45);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--ink)}
 .demo-upgrade-link{color:var(--teal);font-weight:700;text-decoration:underline}
 .app.dark .demo-upgrade-link{color:#6fe3d5}
 .account-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:16px;display:grid;gap:12px}
