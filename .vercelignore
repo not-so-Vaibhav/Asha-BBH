@@ -5,3 +5,4 @@ dist
 .git
 test-results
 playwright-report
+tests/corpus/audio-baseline

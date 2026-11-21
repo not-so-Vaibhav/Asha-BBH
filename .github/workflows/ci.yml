@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Vitest unit, corpus fixture, and server security tests
+        run: npx vitest run --exclude tests/db/rls.test.ts
+
+      - name: Verify offline metrics report generation
+        run: npm run metrics
+
+      - name: Production build
+        run: npm run build
+
+      - name: Verify server secrets are absent from client bundle
+        run: |
+          if grep -R -E "GNANI_API_KEY_ID|SUPABASE_SERVICE_ROLE_KEY|SUPABASE_JWT_SECRET" dist/; then
+            echo "Found server secret name in client bundle!"
+            exit 1
+          fi
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright landing, auth, acceptance, verification, and P2 suites
+        run: npm run e2e
+
+      - name: Scan repository and Git history for secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  supabase-rls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start local Supabase and reset DB with migrations + seed
+        run: |
+          supabase start
+          supabase db reset
+
+      - name: Run RLS, audit trigger, RPC, and migration up/down tests against local Supabase
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+        run: npx vitest run tests/db/rls.test.ts
+
+      - name: Stop local Supabase
+        if: always()
+        run: supabase stop

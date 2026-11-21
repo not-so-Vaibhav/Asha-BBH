@@ -1,1 +1,42 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#0e9f8e"/><meta name="description" content="ASHA SAKHI voice-first visit register demo"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2"/><link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png?v=2"/><link rel="apple-touch-icon" sizes="256x256" href="/favicon-256.png?v=2"/><title>ASHA SAKHI</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#0a7c6e" />
+    <title>ASHA SAKHI — Speak the visit. We write the record.</title>
+    <meta
+      name="description"
+      content="A voice-first visit register prototype for ASHA workers in Marathi, Hindi and English, with built-in MoHFW danger-sign alerts and synthetic demo data."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ASHA SAKHI — Speak the visit. We write the record." />
+    <meta
+      property="og:description"
+      content="Voice-first visit register prototype in Marathi, Hindi and English with built-in MoHFW danger-sign alerts. Synthetic demo data only."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png" />
+    <style>
+      body{margin:0;background:#faf6ee}
+      #splash{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#faf6ee;color:#0b1f33;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;transition:opacity .2s ease}
+      #splash .s-mark{width:56px;height:56px;border-radius:18px;background:#0a7c6e;color:#fff;display:grid;place-items:center;font-size:28px;font-weight:700;box-shadow:0 10px 24px #0a7c6e33}
+      #splash b{font-size:18px;letter-spacing:.9px}
+      #splash small{font-size:12px;color:#4a5b57}
+    </style>
+  </head>
+  <body>
+    <div id="splash" aria-hidden="true">
+      <div class="s-mark">♥</div>
+      <b>ASHA SAKHI</b>
+      <small>Synthetic demo data</small>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

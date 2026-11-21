@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-11-21T09:28:12.692Z",
+  "seg1SpeechDurationMs": 2816,
+  "totalCombinedAudioMs": 14120,
+  "firstSegmentText": "Pregnant woman has vaginal bleeding since morning.",
+  "allSegments": [
+    "Pregnant woman has vaginal bleeding since morning.",
+    "When 1,003 HBVC visit completed, weight is 9 kilograms, vaccinations due OPV and DPT. Next visit 25 November."
+  ],
+  "eosSeg1ToDangerAlertVisibleMs": 1134,
+  "alertFiredBeforeCombinedAudioEnded": true,
+  "alertFiredBeforeSecondSegmentMs": 11839,
+  "waitedForTts": false,
+  "cachedAlertAudioReady": true
+}

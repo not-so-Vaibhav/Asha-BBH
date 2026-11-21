@@ -1,0 +1,305 @@
+{
+  "generatedAt": "2026-11-21T10:02:10.204Z",
+  "model": "timbre-v3.0",
+  "sampleRate": 24000,
+  "speed": 0.95,
+  "count": 30,
+  "totalBytes": 13376040,
+  "entries": [
+    {
+      "id": "anc-55-20nov",
+      "language": "en",
+      "file": "/audio/readback/anc-55-20nov-en.wav",
+      "bytes": 414764,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "cached": true
+    },
+    {
+      "id": "anc-55-20nov",
+      "language": "hi",
+      "file": "/audio/readback/anc-55-20nov-hi.wav",
+      "bytes": 437804,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "cached": true
+    },
+    {
+      "id": "anc-55-20nov",
+      "language": "mr",
+      "file": "/audio/readback/anc-55-20nov-mr.wav",
+      "bytes": 472364,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "cached": true
+    },
+    {
+      "id": "anc-56-20nov",
+      "language": "en",
+      "file": "/audio/readback/anc-56-20nov-en.wav",
+      "bytes": 445484,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "cached": true
+    },
+    {
+      "id": "anc-56-20nov",
+      "language": "hi",
+      "file": "/audio/readback/anc-56-20nov-hi.wav",
+      "bytes": 418604,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "cached": true
+    },
+    {
+      "id": "anc-56-20nov",
+      "language": "mr",
+      "file": "/audio/readback/anc-56-20nov-mr.wav",
+      "bytes": 472364,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 2273,
+      "attempts": 1
+    },
+    {
+      "id": "anc-56-22nov",
+      "language": "en",
+      "file": "/audio/readback/anc-56-22nov-en.wav",
+      "bytes": 495404,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1870,
+      "attempts": 1
+    },
+    {
+      "id": "anc-56-22nov",
+      "language": "hi",
+      "file": "/audio/readback/anc-56-22nov-hi.wav",
+      "bytes": 430124,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1535,
+      "attempts": 1
+    },
+    {
+      "id": "anc-56-22nov",
+      "language": "mr",
+      "file": "/audio/readback/anc-56-22nov-mr.wav",
+      "bytes": 464684,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1696,
+      "attempts": 1
+    },
+    {
+      "id": "anc-55-22nov",
+      "language": "en",
+      "file": "/audio/readback/anc-55-22nov-en.wav",
+      "bytes": 453164,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1852,
+      "attempts": 1
+    },
+    {
+      "id": "anc-55-22nov",
+      "language": "hi",
+      "file": "/audio/readback/anc-55-22nov-hi.wav",
+      "bytes": 399404,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1594,
+      "attempts": 1
+    },
+    {
+      "id": "anc-55-22nov",
+      "language": "mr",
+      "file": "/audio/readback/anc-55-22nov-mr.wav",
+      "bytes": 483884,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1756,
+      "attempts": 1
+    },
+    {
+      "id": "gen-sunita-empty",
+      "language": "en",
+      "file": "/audio/readback/gen-sunita-empty-en.wav",
+      "bytes": 368684,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 6588,
+      "attempts": 2
+    },
+    {
+      "id": "gen-sunita-empty",
+      "language": "hi",
+      "file": "/audio/readback/gen-sunita-empty-hi.wav",
+      "bytes": 384044,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1431,
+      "attempts": 1
+    },
+    {
+      "id": "gen-sunita-empty",
+      "language": "mr",
+      "file": "/audio/readback/gen-sunita-empty-mr.wav",
+      "bytes": 480044,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1807,
+      "attempts": 1
+    },
+    {
+      "id": "hbnc-3-2-18nov",
+      "language": "en",
+      "file": "/audio/readback/hbnc-3-2-18nov-en.wav",
+      "bytes": 506924,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1867,
+      "attempts": 1
+    },
+    {
+      "id": "hbnc-3-2-18nov",
+      "language": "hi",
+      "file": "/audio/readback/hbnc-3-2-18nov-hi.wav",
+      "bytes": 495404,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 2451,
+      "attempts": 1
+    },
+    {
+      "id": "hbnc-3-2-18nov",
+      "language": "mr",
+      "file": "/audio/readback/hbnc-3-2-18nov-mr.wav",
+      "bytes": 476204,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1930,
+      "attempts": 1
+    },
+    {
+      "id": "gen-baby-empty",
+      "language": "en",
+      "file": "/audio/readback/gen-baby-empty-en.wav",
+      "bytes": 433964,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1714,
+      "attempts": 1
+    },
+    {
+      "id": "gen-baby-empty",
+      "language": "hi",
+      "file": "/audio/readback/gen-baby-empty-hi.wav",
+      "bytes": 407084,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1501,
+      "attempts": 1
+    },
+    {
+      "id": "gen-baby-empty",
+      "language": "mr",
+      "file": "/audio/readback/gen-baby-empty-mr.wav",
+      "bytes": 514604,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1884,
+      "attempts": 1
+    },
+    {
+      "id": "hbyc-9-25nov",
+      "language": "en",
+      "file": "/audio/readback/hbyc-9-25nov-en.wav",
+      "bytes": 464684,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1761,
+      "attempts": 1
+    },
+    {
+      "id": "hbyc-9-25nov",
+      "language": "hi",
+      "file": "/audio/readback/hbyc-9-25nov-hi.wav",
+      "bytes": 422444,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1562,
+      "attempts": 1
+    },
+    {
+      "id": "hbyc-9-25nov",
+      "language": "mr",
+      "file": "/audio/readback/hbyc-9-25nov-mr.wav",
+      "bytes": 418604,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1586,
+      "attempts": 1
+    },
+    {
+      "id": "pnc-52-22nov",
+      "language": "en",
+      "file": "/audio/readback/pnc-52-22nov-en.wav",
+      "bytes": 445484,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1660,
+      "attempts": 1
+    },
+    {
+      "id": "pnc-52-22nov",
+      "language": "hi",
+      "file": "/audio/readback/pnc-52-22nov-hi.wav",
+      "bytes": 441644,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1792,
+      "attempts": 1
+    },
+    {
+      "id": "pnc-52-22nov",
+      "language": "mr",
+      "file": "/audio/readback/pnc-52-22nov-mr.wav",
+      "bytes": 422444,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1588,
+      "attempts": 1
+    },
+    {
+      "id": "imm-12-28nov",
+      "language": "en",
+      "file": "/audio/readback/imm-12-28nov-en.wav",
+      "bytes": 426284,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1627,
+      "attempts": 1
+    },
+    {
+      "id": "imm-12-28nov",
+      "language": "hi",
+      "file": "/audio/readback/imm-12-28nov-hi.wav",
+      "bytes": 418604,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 2159,
+      "attempts": 1
+    },
+    {
+      "id": "imm-12-28nov",
+      "language": "mr",
+      "file": "/audio/readback/imm-12-28nov-mr.wav",
+      "bytes": 460844,
+      "voice": "Shivani",
+      "sampleRate": 24000,
+      "latencyMs": 1790,
+      "attempts": 1
+    }
+  ]
+}

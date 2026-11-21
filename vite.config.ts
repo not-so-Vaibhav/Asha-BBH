@@ -1,3 +1,17 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-export default defineConfig({plugins:[react()],server:{proxy:{'/api/gnani':{target:'http://127.0.0.1:4174',changeOrigin:true,ws:true}}}});
+
+export default defineConfig({
+  plugins: [react()],
+  css: { postcss: { plugins: [] } },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:4174',
+        changeOrigin: false,
+        xfwd: true,
+        ws: true,
+      },
+    },
+  },
+});

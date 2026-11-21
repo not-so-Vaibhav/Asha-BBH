@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "concurrently -k -n API,VITE \"node server/index.mjs\" \"vite --host 0.0.0.0\"",
     "build": "tsc -b && vite build",
@@ -10,13 +13,21 @@
     "e2e": "playwright test",
     "start": "node server/index.mjs",
     "start:prod": "npm run build && npm run start",
-    "dev:e2e": "concurrently -k -n API,VITE \"node server/index.mjs\" \"vite --host 127.0.0.1 --port 4173 --strictPort\""
+    "dev:e2e": "concurrently -k -n API,VITE \"node server/index.mjs\" \"vite --host 127.0.0.1 --port 4173 --strictPort\"",
+    "gnani:eval": "node scripts/gnani-eval.mjs",
+    "gnani:alert-audio": "node scripts/generate-alert-audio.mjs",
+    "gnani:readback-audio": "node scripts/generate-readback-audio.mjs",
+    "metrics": "node scripts/metrics.mjs"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/noto-sans-devanagari": "^5.3.0",
+    "@supabase/supabase-js": "^2.109.0",
     "@types/leaflet": "^1.9.22",
     "@vitejs/plugin-react": "^4.3.4",
     "dotenv": "^18.0.10",
     "framer-motion": "^11.15.0",
+    "jose": "^6.2.18",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
@@ -24,14 +35,17 @@
     "typescript": "^5.6.3",
     "vite": "^5.4.14",
     "ws": "^8.23.0",
+    "zod": "^4.6.7",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.65.0",
+    "@types/pg": "^8.23.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
     "concurrently": "^10.0.7",
+    "pg": "^8.23.1",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "vitest": "^2.1.8"

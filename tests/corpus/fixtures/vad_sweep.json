@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-11-21T09:27:53.442Z",
+  "split": "dev",
+  "results": [
+    {
+      "minSilenceMs": 300,
+      "samples": 9,
+      "eosToFinalP50Ms": 941,
+      "eosToFinalP95Ms": 3823,
+      "fieldAccuracy": 86.7,
+      "fieldHits": 13,
+      "fieldTotals": 15,
+      "dangerRecalled": 3,
+      "dangerExpected": 4,
+      "falseAlerts": 0
+    },
+    {
+      "minSilenceMs": 450,
+      "samples": 9,
+      "eosToFinalP50Ms": 1010,
+      "eosToFinalP95Ms": 3741,
+      "fieldAccuracy": 93.3,
+      "fieldHits": 14,
+      "fieldTotals": 15,
+      "dangerRecalled": 4,
+      "dangerExpected": 4,
+      "falseAlerts": 0
+    },
+    {
+      "minSilenceMs": 600,
+      "samples": 9,
+      "eosToFinalP50Ms": 1067,
+      "eosToFinalP95Ms": 2309,
+      "fieldAccuracy": 100,
+      "fieldHits": 15,
+      "fieldTotals": 15,
+      "dangerRecalled": 4,
+      "dangerExpected": 4,
+      "falseAlerts": 0
+    }
+  ]
+}

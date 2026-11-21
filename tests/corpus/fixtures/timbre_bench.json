@@ -1,0 +1,124 @@
+{
+  "generatedAt": "2026-11-21T09:23:04.073Z",
+  "target": "local-server",
+  "before": {
+    "samples": 6,
+    "avgChars": 123,
+    "firstByteP50Ms": 5601,
+    "firstByteP95Ms": 8246,
+    "fullAudioP50Ms": 5604,
+    "fullAudioP95Ms": 8251,
+    "runs": [
+      {
+        "language": "en",
+        "chars": 124,
+        "requestToFirstByteMs": 8246,
+        "serverTtfbMs": 2241,
+        "fullAudioMs": 8251,
+        "bytes": 1121324
+      },
+      {
+        "language": "hi",
+        "chars": 124,
+        "requestToFirstByteMs": 6137,
+        "serverTtfbMs": 1957,
+        "fullAudioMs": 6141,
+        "bytes": 1044524
+      },
+      {
+        "language": "mr",
+        "chars": 121,
+        "requestToFirstByteMs": 4350,
+        "serverTtfbMs": 2213,
+        "fullAudioMs": 4355,
+        "bytes": 1236524
+      },
+      {
+        "language": "en",
+        "chars": 124,
+        "requestToFirstByteMs": 4729,
+        "serverTtfbMs": 2890,
+        "fullAudioMs": 4733,
+        "bytes": 1182764
+      },
+      {
+        "language": "hi",
+        "chars": 124,
+        "requestToFirstByteMs": 8178,
+        "serverTtfbMs": 2950,
+        "fullAudioMs": 8181,
+        "bytes": 1098284
+      },
+      {
+        "language": "mr",
+        "chars": 121,
+        "requestToFirstByteMs": 5601,
+        "serverTtfbMs": 1918,
+        "fullAudioMs": 5604,
+        "bytes": 1013804
+      }
+    ]
+  },
+  "after": {
+    "samples": 6,
+    "avgChars": 71,
+    "firstByteP50Ms": 3823,
+    "firstByteP95Ms": 7288,
+    "fullAudioP50Ms": 3827,
+    "fullAudioP95Ms": 7290,
+    "runs": [
+      {
+        "language": "en",
+        "chars": 70,
+        "requestToFirstByteMs": 6987,
+        "serverTtfbMs": 1687,
+        "fullAudioMs": 6991,
+        "bytes": 883244
+      },
+      {
+        "language": "hi",
+        "chars": 69,
+        "requestToFirstByteMs": 3823,
+        "serverTtfbMs": 1539,
+        "fullAudioMs": 3827,
+        "bytes": 814124
+      },
+      {
+        "language": "mr",
+        "chars": 73,
+        "requestToFirstByteMs": 3460,
+        "serverTtfbMs": 1504,
+        "fullAudioMs": 3462,
+        "bytes": 783404
+      },
+      {
+        "language": "en",
+        "chars": 70,
+        "requestToFirstByteMs": 2864,
+        "serverTtfbMs": 1807,
+        "fullAudioMs": 2866,
+        "bytes": 837164
+      },
+      {
+        "language": "hi",
+        "chars": 69,
+        "requestToFirstByteMs": 7288,
+        "serverTtfbMs": 1873,
+        "fullAudioMs": 7290,
+        "bytes": 783404
+      },
+      {
+        "language": "mr",
+        "chars": 73,
+        "requestToFirstByteMs": 4305,
+        "serverTtfbMs": 1755,
+        "fullAudioMs": 4307,
+        "bytes": 890924
+      }
+    ]
+  },
+  "wsStreamingProbe": {
+    "supported": false,
+    "error": "WS TTS timeout"
+  }
+}
